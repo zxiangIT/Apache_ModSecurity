@@ -1,0 +1,21 @@
+version: '3.2'
+
+services:
+
+  dvwaweb:
+    build:
+      context: './'
+    networks:
+       - nbtnetx
+    ports:
+       - 8080:80
+    container_name: dvwaweb
+
+  dvwams:
+    build:
+      context: './mysql/'
+    networks:
+       - nbtnetx
+    container_name: dvwams
+networks:
+  nbtnetx:
